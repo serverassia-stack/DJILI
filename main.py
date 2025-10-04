@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-
-"""
-مدير الاشتراكات المتقدم - النسخة الكاملة
-الإصدار: 2.0.0
-"""
-
 
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
@@ -19,11 +10,9 @@ from datetime import datetime, timedelta
 import threading
 from typing import List, Dict, Optional
 
-
 # إضافة المسار الحالي إلى مسار الاستيراد
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, current_dir)
-
 
 try:
     from subscription_core import (
@@ -36,7 +25,6 @@ except ImportError as e:
     print("يرجى التأكد من تثبيت جميع المتطلبات:")
     print("pip install -r requirements.txt")
     sys.exit(1)
-
 
 def setup_logging():
     """إعداد نظام التسجيل."""
@@ -55,8 +43,6 @@ def setup_logging():
         logging.info("بدأ تشغيل التطبيق")
     except Exception as e:
         print(f"خطأ في إعداد التسجيل: {e}")
-
-
 def check_dependencies():
     """التحقق من التبعيات الأساسية."""
     try:
@@ -67,8 +53,6 @@ def check_dependencies():
     except ImportError as e:
         print(f"التبعيات الأساسية غير متوفرة: {e}")
         return False
-
-
 def create_sample_data():
     """إنشاء بيانات نموذجية للمستخدم الجديد."""
     try:
@@ -84,27 +68,22 @@ def create_sample_data():
                 Subscription("Microsoft 365", "2024-04-10", 60.0, "أعمال", "حزمة أوفيس"),
                 Subscription("Adobe Creative", "2024-05-05", 120.0, "تعليم", "تصميم وجرافيكس"),
             ]
-            
             for sub in sample_subs:
                 manager.save_subscription(sub)
-                
             logging.info("تم إنشاء البيانات النموذجية")
     except Exception as e:
         logging.error(f"خطأ في إنشاء البيانات النموذجية: {e}")
-
-
 def main():
     """الدالة الرئيسية لتشغيل التطبيق."""
     try:
         # إعداد التسجيل
         setup_logging()
-        
         # التحقق من التبعيات
         if not check_dependencies():
             messagebox.showerror(
                 "خطأ", 
                 "المكتبات الأساسية غير مثبتة!\n"
-                "يرجى التأكد من تثبيت Python بشكل صحيح."
+              "يرجى التأكد من تثبيت Python بشكل صحيح."
             )
             return
         
@@ -114,7 +93,7 @@ def main():
         # إعداد عنوان النافذة وأيقونتها
         root.title("📅 مدير الاشتراكات المتقدم - النسخة الكاملة")
         root.geometry("1200x800")
-        
+
         # محاولة تحميل الأيقونة
         try:
             icon_path = os.path.join(current_dir, "app_icon.ico")
