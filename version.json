@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "release_date": "2024-01-15",
+    "build_number": "2024011501",
+    "changelog": [
+        "الإصدار الأول الكامل",
+        "واجهة مستخدم عربية كاملة",
+        "نظام إدارة اشتراكات متكامل",
+        "تقارير وإحصائيات متقدمة",
+        "نظام تنبيهات ذكي",
+        "نسخ احتياطي تلقائي",
+        "تصدير بيانات متعدد الصيغ"
+    ],
+    "min_python_version": "3.6",
+    "supported_os": ["Windows", "Linux", "macOS"],
+    "developer": "فريق تطوير مدير الاشتراكات",
+    "license": "MIT",
+    "website": "https://github.com/yourusername/subscription-manager"
+}
